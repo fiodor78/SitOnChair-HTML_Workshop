@@ -1,0 +1,61 @@
+.thumbs-space {
+
+    >div {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+    }
+
+    article {
+        margin: 25px 0;
+        border: 1px solid lighten($color-text-grey, 30);
+        min-width: 335px;
+        min-height: 225px;
+        max-width: 335px;
+        width: 335px;
+        display: block;
+
+        h3 {
+            font-size: 1.2em;
+            letter-spacing: -0.8px;
+
+            &:after {
+                display: block;
+                content: "";
+                height: 8px;
+                width: 140px;
+                background-color: $color-accent-main;
+                margin: 2px 0 $default-margin / 2 0;
+            }
+        }
+
+    }
+}
+
+.product-thumb {
+
+    @for $img from 1 to 3 {
+        &:nth-of-type(#{$img}) {
+            background-image: url(#{'../images/box'+$img+'_img.jpg'});
+        }
+    }
+
+    h3 {
+        background-color: rgba(255, 255, 255, 0.4);
+        width: 100%;
+        display: block;
+        margin-top: 5.5 * $default-margin;
+        padding: $default-margin / 2;
+    }
+}
+
+.product-info {
+
+    padding: $default-margin;
+
+    p {
+        color: $color-text-grey;
+        line-height: 1.5em;
+    }
+}

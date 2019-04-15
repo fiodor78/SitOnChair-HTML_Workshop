@@ -1,0 +1,151 @@
+.prices {
+    background-color: $color-background-grey;
+    padding: 2 * $default-margin 0;
+
+    .container {
+        >div {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+    }
+}
+
+.price-module {
+    border: 2px solid $color-text-light;
+    width: $column-size;
+    height: 500px;
+    background: $color-background-price;
+    position: relative;
+    margin: ($default-margin* 2) 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: $default-margin;
+
+    h3 {
+        margin-top: $default-margin / 3;
+        text-transform: uppercase;
+        font-size: 1.6em;
+        font-weight: normal;
+        color: darken($color-accent-main, 5);
+        display: block;
+    }
+
+    &::before {
+        content: "•";
+        color: $color-text-light;
+        font-size: 10em;
+        line-height: 1.8 * $default-margin;
+        border: 2px solid $color-text-light;
+        background: $color-background-price;
+        width: $column-size / 7;
+        height: $column-size / 7;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+    }
+
+    ul {
+        list-style: none;
+        width: 100%;
+        text-align: center;
+        font-size: 1.7em;
+        color: $color-text-light;
+        min-height: 160px;
+
+        li {
+            padding: $default-margin / 4;
+            background-color: $color-background-grey;
+            color: darken($color-text-light, 15);
+
+            &:nth-child(2n-1) {
+                background-color: $color-background-pricelist;
+
+            }
+        }
+    }
+
+    .green-button {
+        font-size: 1.2em;
+        margin: $default-margin / 2 0;
+        padding: 0.5em 1.5em;
+        letter-spacing: 0;
+    }
+}
+
+.price-promoted {
+    background-color: $color-accent-main;
+    border-color: $color-accent-main;
+
+    &::before {
+        color: $color-accent-main;
+        border-color: $color-accent-main;
+    }
+
+    h3 {
+        color: $color-text-secondary;
+    }
+
+    .price-module-value {
+        border: 2px solid $color-accent-main;
+        color: $color-accent-main;
+    }
+
+    ul {
+        color: $color-text-light;
+
+        li {
+            background-color: $color-background-pricelist;
+
+            &:nth-child(2n-1) {
+                background-color: $color-background-main;
+
+            }
+        }
+    }
+
+    .green-button {
+        font-size: 1.2em;
+        margin: $default-margin / 2 0;
+        padding: 0.5em 1.5em;
+        letter-spacing: 0;
+        background-color: $color-text-secondary;
+        color: $color-accent-main;
+
+        &:hover {
+            background-color: darken($color-text-secondary, 10);
+        }
+    }
+}
+
+.price-module-value {
+    color: $color-text-light;
+    border-radius: 50%;
+    border: 2px solid $color-text-light;
+    background-color: white;
+    width: 130px;
+    height: 130px;
+    padding: $default-margin 0;
+    margin: $default-margin 0;
+
+    p {
+        font-weight: bold;
+        font-size: 3em;
+        text-align: center;
+
+        sup {
+            font-size: 1rem;
+        }
+
+        &:nth-of-type(2) {
+            margin-top: $default-margin / 5;
+            font-size: 1em;
+        }
+    }
+}

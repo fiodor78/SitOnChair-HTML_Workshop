@@ -1,0 +1,29 @@
+footer {
+    min-height: 120px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    small {
+        font-size: 1.2rem;
+        color: $color-text-light;
+        flex-grow: 2;
+    }
+
+    >* {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo,
+    .logo.mono b {
+        font-size: 1.3rem;
+        color: $color-text-light;
+    }
+
+    .logo {
+        margin-left: 3.5 * $default-margin;
+    }
+}

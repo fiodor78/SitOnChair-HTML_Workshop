@@ -1,0 +1,118 @@
+.contact {
+    padding: 2 * $default-margin 0;
+
+    h2 {
+        margin: 0 0 $default-margin * 2 0;
+    }
+
+    span {
+        font-size: 1em;
+    }
+
+    form {
+        max-height: $contact-form-height;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        * {
+            color: $color-text-light;
+            font-family: $font;
+        }
+
+        >div {
+            &:nth-of-type(1) {
+                display: flex;
+                flex-grow: 2;
+                flex-direction: column;
+                margin-right: $default-margin * 2;
+            }
+
+            &:nth-of-type(2) {
+                max-width: 35%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+        }
+    }
+
+    input,
+    textarea {
+        height: $contact-form-inputheight;
+        border: 1px solid $color-accent-main;
+        padding: $default-margin / 2;
+        margin-bottom: $default-margin;
+        color: $color-text-grey;
+        font-size: 2.2em;
+
+        &::placeholder {
+            color: $color-text-light;
+        }
+
+        &::focus {
+            border: 2px solid $color-accent-main;
+        }
+    }
+
+    textarea {
+        height: $contact-form-height - (2 * $contact-form-inputheight + $default-margin);
+        margin-bottom: 0;
+        resize: none;
+    }
+
+    img {
+        display: block;
+        width: 264px;
+        margin-top: -20px;
+        margin-left: 20px;
+    }
+
+    .contact-agreement {
+        width: 100%;
+    }
+
+    [type="checkbox"] {
+        opacity: 0;
+        float: left;
+        margin-bottom: 0;
+        width: 0;
+    }
+
+    [type="checkbox"]+label {
+        &::before {
+            content: "  ";
+            display: block;
+            float: left;
+            margin: 0 $default-margin 0 0;
+            clear: none;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            background: $color-background-main;
+            border: 1px solid $color-accent-main;
+        }
+    }
+
+    [type="checkbox"]:checked+label {
+        &::before {
+            content: "✔";
+            font-size: 3.3em;
+            color: $color-accent-main;
+        }
+    }
+
+    label {
+        display: block;
+        font-size: 1.5em;
+        line-height: 1.1em;
+        width: 374px;
+    }
+
+    input.green-button {
+        margin: 0;
+        color: $color-text-secondary;
+    }
+}
